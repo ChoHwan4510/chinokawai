@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix'=>'project'], function(){
+    Route::get('/animeQuiz','ProjectController@animeQuiz')->name('projectAnimeQuiz');
+});

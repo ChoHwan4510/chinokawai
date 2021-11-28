@@ -11,7 +11,11 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+ if(mix.inProduction()){
+    mix.styles('resources/css/reset.css','public/css/reset.css').version();
+    mix.styles('resources/css/baseCss.css','public/css/baseCss.css').version();
+ }else{
+    mix.copy('resources/js/','public/js/');
+    mix.copy('resources/css/','public/css/');
+    mix.copy('resources/img/','public/img/');
+ }
