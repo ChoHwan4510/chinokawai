@@ -83,7 +83,7 @@
 
                 <div class="time-and-cost">
                     <div class="time">
-                        남은시간: <span id="timeCount">10</span>초
+                        남은시간: <span id="timeCount">20</span>초
                     </div>
                     <div class="cost">
                         획득점수: <span id="score">0</span>점
@@ -100,10 +100,10 @@
     const timeCount = document.querySelector("#timeCount");
     const score = document.querySelector("#score");
     const typingInsert = document.querySelector("#typingInsert");
-    const gameTime = 10;
+    const gameTime = 20;
     const quizArray = [
         {question : "ㅅㅂㅇ ㅇㅎ", answer : "새벽의 연화"},
-        {question : "ㅈㄱㅇ ㅅㄴ", answer : "작안의 샤나"},
+        {question : "ㅈㅇㅇ ㅅㄴ", answer : "작안의 샤나"},
         {question : "ㄱㅇㅁ ㅇㄷㅅ! ㅇㅁㄹㅉ", answer : "건어물 여동생! 우마루짱"},
         {question : "ㄴㅅㅋㅇ", answer : "니세코이"},
         {question : "ㄹㄱ ㅎㄹㅇㅈ", answer : "로그 호라이즌"},
@@ -114,8 +114,8 @@
         {question : "ㅇㄹㄴ ㅅㅌㅎㅅㄴㄷ", answer : "인류는 쇠퇴했습니다"},
         {question : "ㄴㅇㄱ ㄷㄱㄹ", answer : "너에게 닿기를"},
         {question : "ㄷㅂㅊㅅ", answer : "달빛천사"},
-        {question : "ㅅㄷㅇㅌㅇㄹㅇ", answer : "소드아트온라인"},
-        {question : "ㅇㅅㄱ ㄹㅂㅇㅈ", answer : "이세계 리뷰어즈"},
+        {question : "ㅅㄷ ㅇㅌ ㅇㄹㅇ", answer : "소드 아트 온라인"},
+        {question : "ㅇㅈㅈ ㄹㅂㅇㅈ", answer : "이종족 리뷰어즈"},
         {question : "ㄱㄱㅅㄴㄴ ㅅㅊㅂㅈ ㅇㅇ", answer : "기교소녀는 상처받지 않아"},
         {question : "ㄷㅋㄱㅇ", answer : "도쿄구울"},
         {question : "ㅇ ㅁㅈ ㅅㄱㅇ ㅊㅂㅇ", answer : "이 멋진 세계에 축복을"},
@@ -130,19 +130,17 @@
         {question : "ㅅㅌㄹㅇㅋ ㄷ ㅂㄹㄷ", answer : "스트라이크 더 블러드"},
         {question : "ㄴㄱㅇ ㄴㄹㅇㅍ", answer : "노게임 노라이프"},
         {question : "ㅇㄱㅂㄷ", answer : "야근병동"},
-        {question : "ㅇㅍㄱ ㅅㅇㅎㅁㄹ ㅂㅇㄹㅇ ㅇㅇㅎㄴㄷ", answer : "니세코이"},
+        {question : "ㅇㅍㄱ ㅅㅇㅎㅁㄹ ㅂㅇㄹㅇ ㅇㅇㅎㄴㄷ", answer : "아픈건 싫어하므로 방어력에 올인합니다"},
         {question : "ㅋㄹㅋ", answer : "킬라킬"},
     ]
-
     let time = gameTime;
     let is_game = false;
     let scoreVal =0;
     let timeInterval;
-
     const btnChange = () =>{
         let btnStatus = gameStartBtn.classList.contains("active");
         if(btnStatus){
-            gameStartBtn.classList.remove("active");            
+            gameStartBtn.classList.remove("active");
         }else{
             gameStartBtn.classList.add("active");
             gameStartBtn.innerText = "게임중";
@@ -161,14 +159,12 @@
             alert("종료 \n정답 : "+quizText.dataset.val);        
         }
     }
-
     const makeQuiz = () =>{
         const wordRandomIndex = Math.floor(Math.random() * quizArray.length);
         quizText.innerText = quizArray[wordRandomIndex].question;
         console.log(quizArray[wordRandomIndex].question);
         quizText.dataset.val = quizArray[wordRandomIndex].answer;
     }
-
     const run = () =>{        
         is_game = true;
         time = gameTime;
@@ -180,9 +176,7 @@
         timeInterval = setInterval(countDown,1000);
         btnChange();
         makeQuiz();
-
     }
-
     const wordMatch = (e) =>{        
         if(is_game && e.key === "Enter"){
             if(typingInsert.value === quizText.dataset.val){
@@ -195,8 +189,6 @@
             }
         }
     }
-
     gameStartBtn.addEventListener("click",run);
     typingInsert.addEventListener("keydown",wordMatch);
-
 </script>
