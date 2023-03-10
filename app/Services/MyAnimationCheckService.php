@@ -20,6 +20,8 @@ class MyAnimationCheckService{
         ];
 
         $result = $this->proejctMyAnimationCheck->insert_proejct_my_animation_check($input_test);
+
+        return $result;
     }
 
     public function getMyanimationList(){
