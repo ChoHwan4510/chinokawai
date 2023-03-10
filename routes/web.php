@@ -20,4 +20,5 @@ Route::get('/', function () {
 Route::group(['prefix'=>'project'], function(){
     Route::get('/animeQuiz','ProjectController@animeQuiz')->name('projectAnimeQuiz');
     Route::get('/myAnimationCheck','ProjectController@myAnimationCheck')->name('myAnimationCheck');
+    Route::get('/inserMyAnimationCheck', 'ProjectController@insertMyAnimation')->name('insertMyAnimation');
 });

@@ -13,6 +13,7 @@
 @section('content')
     <div>
         <div>뭘만들까 {{ $result_test }}</div>
+        <div style="width:200px; height: 200px; background: #000">클릭</div>
     </div>
 @endsection
 
