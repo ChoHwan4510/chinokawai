@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\ProjectService;
 
 class ProjectController extends Controller
 {
@@ -11,6 +12,10 @@ class ProjectController extends Controller
     }
 
     public function myAnimationCheck(){
-        return view('project/myAnimeCheck');
+        $project_service = new ProjectService();
+
+        $result_test = $project_service->getMyanimationList();
+
+        return view('project/myAnimeCheck', compact('result_test'));
     }
 }
