@@ -92,6 +92,39 @@
                     </div>
                 </div>
             </div>
+
+             <!-- 애니메이션 체크 -->
+             <div class="projects-box bg-white">
+                 <div class="project-title text-c">애니메이션 체킹</div>
+
+                 <div class="project-info">
+                     <div class="project-picture">
+                         <img class="project-picture-p" src="/img/anime_quiz_screen.png" />
+                     </div>
+                     <div class="project-text-box">
+o                         <div class="project-texts">
+                             <div>주요기능</div>
+                             <div>개인적으로사용하는 애니메이션 화수 체크</div>
+                         </div>
+                         <div class="project-texts">
+                             <div>도메인</div>
+                             <div>
+                                 <a href="http://chinokawai.kr/project/myAnimationCheck">
+                                     http://chinokawai.kr/project/myAnimationCheck
+                                 </a>
+                             </div>
+                         </div>
+                         <div class="project-texts">
+                             <div>Front-end</div>
+                             <div>vanilla.JS, Html, Css</div>
+                         </div>
+                         <div class="project-texts">
+                             <div>Back-end</div>
+                             <div>PHP, MariaDB</div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
          </div>
      </section>
 @endsection
