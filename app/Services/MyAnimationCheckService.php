@@ -19,7 +19,7 @@ class MyAnimationCheckService{
             'flag_update' => 0,
         ];
 
-        $result = $this->proejctMyAnimationCheck->insert_proejct_my_animation_check();
+        $result = $this->proejctMyAnimationCheck->insert_proejct_my_animation_check($input_test);
     }
 
     public function getMyanimationList(){
