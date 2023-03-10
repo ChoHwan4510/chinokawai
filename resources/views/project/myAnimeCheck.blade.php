@@ -12,7 +12,7 @@
 
 @section('content')
     <div>
-        <div>뭘만들까 {{ result_test }}</div>
+        <div>뭘만들까 {{ $result_test }}</div>
     </div>
 @endsection
 
