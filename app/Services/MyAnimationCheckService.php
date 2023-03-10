@@ -7,7 +7,7 @@ class MyAnimationCheckService{
     private $proejctMyAnimationCheck = null;
 
     public function __construct(){
-        $proejctMyAnimationCheck = new ProejctMyAnimationCheckModel();
+        $this->proejctMyAnimationCheck = new ProejctMyAnimationCheckModel();
     }
 
     public function insertMyAnimation(){
