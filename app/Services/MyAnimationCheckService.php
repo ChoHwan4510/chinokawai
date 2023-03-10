@@ -17,6 +17,8 @@ class MyAnimationCheckService{
             'update_last_episode' => 0,
             'mem_last_episode' => 0,
             'flag_update' => 0,
+            'reg_dt' => date('Y-m-d H:i:s'),
+            'update_dt' => date('Y-m-d H:i:s'),
         ];
 
         $result = $this->proejctMyAnimationCheck->insert_proejct_my_animation_check($input_test);
