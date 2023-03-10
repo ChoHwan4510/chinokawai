@@ -14,5 +14,7 @@ class ProejctMyAnimationCheckModel extends Model{
             return 0;
         }
         $result = DB::table($this->table)->insert($input);
+
+        return $result;
     }
 }
