@@ -48,17 +48,36 @@
             margin:0 auto;
             text-align: center;
             font-size: 1rem;
-        }          
-    </style>
-
+        }   
+        .unlock-me{
+            cursor: pointer;
+        }       
+    </style>    
     @include('common.navbar')
-
     <div>
         @yield('content')
-    </div>
-    
+    </div>    
     @include('common.footer')
 </body>
+
+<script type="text/javascript">
+    const changeMe = document.querySelector("#unlockMe");
+
+    const setCookie = (name, value, exp)=>{        
+        var date = new Date();
+        date.setTime(date.getTime() + exp*24*60*60*1000);
+        document.cookie = `${name}=${value};expires=${date.toUTCString()};path/`;
+
+        console.log("setCookie");
+    };
+
+    const myHeartUnlock = ()=>{
+        setCookie("otaku","ok",1);
+        location.reload();
+    };
+    
+    changeMe.addEventListener("click",myHeartUnlock);
+</script>
 
 @stack('scripts')
 
