@@ -10,6 +10,7 @@ class ProejctMyAnimationCheckModel extends Model{
     protected $table = 'proejct_my_animation_check';
 
     public function insert_proejct_my_animation_check($input){
+        $result = '';
         if(count($input) <= 0){
             return 0;
         }
