@@ -19,6 +19,11 @@ Route::get('/', function () {
 
 Route::group(['prefix'=>'project'], function(){
     Route::get('/animeQuiz','ProjectController@animeQuiz')->name('projectAnimeQuiz');
-    Route::get('/myAnimationCheck','ProjectController@myAnimationCheck')->name('myAnimationCheck');
-    Route::get('/inserMyAnimationCheck', 'ProjectController@insertMyAnimation')->name('inserMyAnimationCheck');
+
+    //애니메이션 체크
+    Route::group(['prefix' => 'checkAni'], function(){
+        Route::get('/list','ProjectController@myAnimationCheck')->name('myAnimationCheck');
+        Route::get('/insert', 'ProjectController@insertMyAnimation')->name('inserMyAnimationCheck');
+        Route::get('/search', 'ProjectController@animationSiteCheckController')->name('searchAniCheck');
+    });
 });

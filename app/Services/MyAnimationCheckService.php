@@ -2,6 +2,7 @@
 namespace App\Services;
 
 use App\Models\ProejctMyAnimationCheckModel;
+use Symfony\Component\DomCrawler\Crawler;
 
 class MyAnimationCheckService{
     private $proejctMyAnimationCheck = null;
@@ -10,6 +11,14 @@ class MyAnimationCheckService{
         $this->proejctMyAnimationCheck = new ProejctMyAnimationCheckModel();
     }
 
+    public function siteAnimationCheck($aniSearchUrl = '', $aniCheckVal = ''){
+        return $this->siteCheckCrawler($aniSearchUrl, $aniCheckVal);
+    }
+
+    /**
+     * 애니메이션 INSERT
+     * @return bool|int
+     */
     public function insertMyAnimation(){
         $input_test = [
             'mem_no' => 1,
@@ -24,6 +33,20 @@ class MyAnimationCheckService{
         $result = $this->proejctMyAnimationCheck->insert_proejct_my_animation_check($input_test);
 
         return $result;
+    }
+
+    public function siteCheckCrawler($url = '', $search_animation = ''){
+        if($url == '') return false;
+
+        $checkUrl = $url.$search_animation;
+        $html = file_get_contents($checkUrl);
+
+        $crawler = new Crawler($html);
+        $crawler_data = $crawler->filter('.titled')->each(function(Crawler $node, $i){
+            return $node->text();
+        });
+
+        return $crawler_data;
     }
 
     public function getMyanimationList(){

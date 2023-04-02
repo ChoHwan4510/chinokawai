@@ -16,6 +16,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        //Linkf 사이트 지정 애니 업데이트 크롤
+        $schedule->call(function(){
+
+        })->hourly();
     }
 
     /**

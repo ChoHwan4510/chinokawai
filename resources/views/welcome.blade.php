@@ -102,14 +102,14 @@
                          <img class="project-picture-p" src="/img/anime_quiz_screen.png" />
                      </div>
                      <div class="project-text-box">
-o                         <div class="project-texts">
+                         <div class="project-texts">
                              <div>주요기능</div>
-                             <div>개인적으로사용하는 애니메이션 화수 체크</div>
+                             <div>개인적으로 사용하는 애니메이션 화수 체크</div>
                          </div>
                          <div class="project-texts">
                              <div>도메인</div>
                              <div>
-                                 <a href="http://chinokawai.kr/project/myAnimationCheck">
+                                 <a href="http://devchinokawai.kr/project/checkAni/list">
                                      http://chinokawai.kr/project/myAnimationCheck
                                  </a>
                              </div>

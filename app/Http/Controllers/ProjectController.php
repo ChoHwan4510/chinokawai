@@ -23,13 +23,22 @@ class ProjectController extends Controller
         return view('project/myAnimeCheck', compact('result_test'));
     }
 
+    public function animationSiteCheckController(Request $request){
+        $aniSearchVal = $request->input('aniSearchVal') ?? '';
+        $aniSearchUrl = $request->input('aniSearchUrl') ?? 'https://mobikf.ncctvgroup.com/?s=';
+
+        $result = $this->myAnimationCheckService->siteAnimationCheck($aniSearchUrl, $aniSearchVal);
+        return response()->json(['status' => 200, 'msg' =>'', 'list' => $result], 200);
+    }
+
+    /**  */
     public function insertMyAnimation(){
         $result = $this->myAnimationCheckService->insertMyAnimation();
         if($result <= 0){
             return response()->json(['status' => '400', 'msg' => '입력오류', 'data' => [] ] , 400);
         }
 
-        return resonse()->json(['status' => '200', 'msg' => '', 'data' => [] ], 200);
+        return response()->json(['status' => '200', 'msg' => '', 'data' => [] ], 200);
     }
 
 
